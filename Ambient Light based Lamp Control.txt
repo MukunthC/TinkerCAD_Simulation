@@ -1,0 +1,22 @@
+
+void setup()
+{
+ pinMode(A3,INPUT);
+  pinMode(3,OUTPUT);
+  Serial.begin(9600);
+  digitalWrite(3,LOW);
+}
+
+void loop()
+{
+  int light=analogRead(A3);
+ if (light <60)
+ {
+   digitalWrite(3,HIGH);
+ }
+  else
+  {
+    digitalWrite(3,LOW);
+  }
+  delay(100);
+}

@@ -1,0 +1,16 @@
+
+void setup()
+{
+  pinMode(A0,INPUT);
+  pinMode(3,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+ int temp=analogRead(A0);
+  Serial.println(temp);
+  int maptemp = map(temp,20,360,0,255);
+  analogWrite(3,maptemp);
+  delay(200);
+}

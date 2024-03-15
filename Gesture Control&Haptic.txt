@@ -1,0 +1,30 @@
+void setup()
+{
+  pinMode(A0,INPUT);
+  Serial.begin(9600);
+  pinMode(3,OUTPUT);
+  pinMode(5,OUTPUT);
+}
+void loop()
+{
+  int flex=analogRead(A0);
+  Serial.print("Flex Reading:");
+  Serial.println(analogRead(A0));
+  delay(200);
+  if(flex>800 && flex<900)
+  {
+    digitalWrite(3,HIGH);
+    digitalWrite(5,LOW);
+  }
+  else if(flex>900 && flex<990)
+  {
+    digitalWrite(5,HIGH);
+    digitalWrite(3,LOW);
+  }
+  else
+  {
+    digitalWrite(3,LOW);
+    digitalWrite(5,LOW);
+  }
+  
+}

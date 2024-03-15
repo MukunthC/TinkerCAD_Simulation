@@ -1,0 +1,44 @@
+#include<Servo.h>
+#include<LiquidCrystal.h>
+LiquidCrystal LCD(13,12,11,10,9,8);
+Servo myservo;
+int i;
+void setup()
+{
+  myservo.attach(3);
+  pinMode(7,INPUT);
+  myservo.write(0);
+  Serial.begin(9600);
+  LCD.begin(16,2);
+  LCD.setCursor(0,0);
+  LCD.print("No.of Objects:");
+  LCD.setCursor(0,1);
+  LCD.print("Door Opened");
+}
+void loop()
+{
+  int ir=digitalRead(7);
+  if(ir == 0)
+  {
+    i++;
+    Serial.print("No.of Object detected:");
+    LCD.setCursor(0,0);
+    LCD.print("No.of Objects:");
+    //LCD.setCursor(0,15);
+    LCD.print(i);
+    //LCD.setCursor(0,1);
+      //LCD.print("Door Opened");
+    Serial.println(i);
+    delay(200);
+    while(i==10)
+    {
+      Serial.println("Max Object Count Reached");
+      myservo.write(90);
+      LCD.setCursor(0,1);
+      LCD.print("Door Closed");
+      delay(30);
+      while(1);
+    }
+  }
+  //myservo.detach();
+}

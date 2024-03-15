@@ -1,0 +1,23 @@
+1.Switch - Pushbutton/Slide
+2.Pontentiometer
+3.Vibration Motor
+4.DC Motor
+5.Microservo
+6.Gear Motor
+7.LED/RGB LED
+8.LDR
+9.Soilmoisture
+10.Ultrasonic
+11.PIR Sensor
+12.Piezo buzzer
+13.Temperature Sensor
+14.LCD
+15.Flex Sensor
+16.Force Sensor
+17.IR Sensor
+18.Tilt Sensor
+19.Gas Sensor
+20.Keypad
+21.Neo Pixel LED Strip
+22.IR Remote
+23.7 Segment display/cascaded display

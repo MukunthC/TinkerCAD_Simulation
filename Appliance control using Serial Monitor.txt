@@ -1,0 +1,44 @@
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  pinMode(12,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  char re = 0;
+  if(Serial.available())
+  {
+ re = Serial.read();
+  if(re == 'R')
+  {
+    digitalWrite(13,HIGH);
+    Serial.println("REDLED ON");
+  }
+  else if (re == 'r')
+  {
+    digitalWrite(13,LOW);
+    Serial.println("REDLED OFF");
+  }
+  else if (re == 'G')
+  {
+    digitalWrite(12,HIGH);
+    Serial.println("GREENLED ON");
+  }
+    else if (re == 'g')
+  {
+    digitalWrite(12,LOW);
+    Serial.println("GREENLED OFF");
+  }
+  else
+  {
+    digitalWrite(13,LOW);
+    digitalWrite(12,LOW);
+    Serial.println("No Serial Data Available");
+  }
+    
+  }
+  
+}

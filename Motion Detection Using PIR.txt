@@ -1,0 +1,27 @@
+#define RED 12
+#define GREEN 7
+#define PIR 3
+#define buz 5
+void setup()
+{
+  pinMode(RED,OUTPUT);
+  pinMode(GREEN,OUTPUT);
+  pinMode(PIR,INPUT);
+}
+
+void loop()
+{
+  int a=digitalRead(PIR);
+  if(a == 1)
+  {
+  digitalWrite(RED,HIGH);
+  digitalWrite(GREEN,LOW);
+  digitalWrite(buz,HIGH);
+  }
+  else
+  {  
+  digitalWrite(RED,LOW);
+  digitalWrite(GREEN,HIGH);
+  digitalWrite(buz,LOW);
+  }
+}
